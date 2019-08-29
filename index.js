@@ -1,4 +1,4 @@
-const { fetchMyIP , fetchCoordsByIp} = require('./iss');
+const { fetchMyIP , fetchCoordsByIp, fetchISSFlyOverTimes} = require('./iss');
 
 
 //Test code, doesnt really matter. Delete later
@@ -8,8 +8,9 @@ const { fetchMyIP , fetchCoordsByIp} = require('./iss');
 //     return;
 //   }
 
-//   console.log('It worked! Returned IP:' , ip);
 //   fetchCoordsByIp(ip, (error, locationData) => {
-//     console.log(locationData);
+//     fetchISSFlyOverTimes(locationData, (error, flyOverData) => {
+//       console.log(flyOverData);
+//     });
 //   });
 // });
