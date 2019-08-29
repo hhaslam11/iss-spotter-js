@@ -1,5 +1,13 @@
 const request = require('request');
 
+
+const printPassTimes = function(passTimes) {
+  for (const pass of passTimes) {
+    const datetime = new Date(0);
+    datetime.setUTCSeconds(pass.risetime);
+    console.log(`Next pass at ${datetime} for ${pass.duration} seconds!`);
+  }
+};
 /**
  * Makes a single API request to retrieve the user's IP address.
  * Input:
@@ -83,4 +91,4 @@ const nextISSTimesForMyLocation = function(cb) {
 };
 
 
-module.exports = { nextISSTimesForMyLocation };
+module.exports = { nextISSTimesForMyLocation, printPassTimes};
