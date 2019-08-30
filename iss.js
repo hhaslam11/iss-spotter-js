@@ -30,7 +30,7 @@ const fetchMyIP = function(cb) {
 };
 
 const fetchCoordsByIp = function(ip, cb) {
-  request('https://ipvigilante.com/' + ip, (error, response, data) => {
+  request('http://ip-api.com/json/' + ip, (error, response, data) => {
     if (error) {
       cb(error, null);
       return;
@@ -40,8 +40,8 @@ const fetchCoordsByIp = function(ip, cb) {
     }
     cb(null,
       {
-        latitude: JSON.parse(data).data.latitude,
-        longitude: JSON.parse(data).data.longitude
+        latitude: JSON.parse(data).lat,
+        longitude: JSON.parse(data).lon
       });
   });
 };
