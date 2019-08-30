@@ -8,6 +8,8 @@ const printPassTimes = function(passTimes) {
   }
 };
 
+const trimError = e => String(e).split('\n')[0];
+
 const fetchMyIp = () => {
   return request('https://api.ipify.org/?format=json');
 };
@@ -35,6 +37,9 @@ const nextISSTimesForMyLocation = () => {
     })
     .then(data => {
       printPassTimes(JSON.parse(data).response);
+    })
+    .catch(e => {
+      console.log('Woops! Something went wrong.\n' + trimError(e));
     });
 };
 
